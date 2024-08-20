@@ -14,6 +14,9 @@ void main () {
     // Smoke
     float smoke = texture(uPerlinTexture, smokeUv).r;
 
+    // Remap
+    smoke = smoothstep(0.4, 1.0, smoke);
+
     // Final Color
     gl_FragColor = vec4(1.0, 1.0, 1.0, smoke);
     #include <tonemapping_fragment>
